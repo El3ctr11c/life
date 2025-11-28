@@ -5,7 +5,10 @@
 
 #include "life.h"
 
-std::vector<std::vector<int>> getBoard() {
+const char LIVE_CHAR = '#';
+const char DEAD_CHAR = '.';
+
+std::vector<std::vector<char>> getBoard() {
 	//Please Enter the name of the file you want to run (<name>.txt)
 	std::cout << "Enter the name of the file you want to run: ";
 	std::string filename;
@@ -14,37 +17,48 @@ std::vector<std::vector<int>> getBoard() {
 
 	//Attempt to open board
 	std::string infilePath = "../boards/" + filename;
-
-	//std::cout << infilePath << std::endl;
-
 	std::ifstream infile;
 	infile.open(infilePath, std::ios::in);
 	
 	if (!infile) {
-		std::cerr << "Error trying to open file!" << std::endl;
+		std::cerr << "Error trying to open file! :(" << std::endl;
 		std::exit(1);
 	}
+	std::cout << "Successfully found " << filename << "! :)" << std::endl;
+
+	//Board will be stored in the stack (for now)
+	std::vector<std::vector<char>> board;
 	
-	//Board will be stored in the stack
-	std::vector<std::vector<int>> board;
-	
-	//Read File line by line (row by row)
-	std::string rowString;
-	while (std::getline(infile, rowString)) {
-		std::cout << rowString << std::endl;
+	//Read File line by line (row by row
+	std::string line;
+	while (std::getline(infile, line)) {
+		std::vector<char> row;
+		
+		//Reserve the number of columns to row (the size of rowString)
+		row.reserve(line.size());
+
+		//Populate buffer row
+		for (char c : line) {
+			if (c == '1') row.push_back(LIVE_CHAR);
+			else row.push_back(DEAD_CHAR);
+		}
+		//Add each row to board
+		board.push_back(row);
 	}
-
-	
 	return board;
-	//Timesteps per second 30 steps per second
+}
 
-	//Load Board (nameboard.txt selected!)
-	//Settings txt file that stores how many seconds for simulation and timesteps per second, color
-	//Ask user if they are ready? Yes / No : 
-	//Loop each stateof game
-
+//TODO MODIFY THIS FUNCTION TO SUPPORT COLOR
+void printBoard(std::vector<std::vector<char>> board) {
+	for (auto v : board) {
+		for (auto c : v) {
+			std::cout << std::setw(5) << c;
+		}
+	std::cout << std::endl;
+	}
 }
 
 void simulateBoard() {
 	std::cout << "Simulating..." << std::endl;
 }
+

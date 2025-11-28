@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <vector>
 #include "life.h"
 
 void displayUI();
@@ -13,13 +14,14 @@ int main() {
 	int choice;
 	std::cout << "Enter the option you want to select: ";
 	std::cin >> choice;
-
+	
+	std::vector<std::vector<char>> board;
 	//Ask user for the option to select
 	switch (choice) {
-		//Usert choice to load a board
+		//User choice to load a board
 		case(1):
 			//simulate_board(); //FROM life.h
-			getBoard();
+			printBoard(getBoard());
 			
 			break;
 		/*
