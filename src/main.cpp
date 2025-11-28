@@ -8,12 +8,34 @@ void displayOptions();
 int main() {
 	displayUI();
 	displayOptions(); 
+	
+	enum choices {LOAD_OPTION = 0, SETTINGS_OPTION = 1, BACK_OPTION = 2, EXIT_OPTION = 3};
 
-	//Ask user to open a file from folder of board
+	//Ask user for the option to select
+	int choice;
 	std::cout << "Enter your choice: ";
 	std::cout << std::endl;
-
-	//UI Option 
+	std::cin >> choice;
+	
+	//Load Board 
+	
+	//Settings (Options to change settings) stay on settings screen until exit or go back
+	
+	//Exit Progra=;
+	
+	//UI Option
+	switch (choice) {
+		//User chose 
+		case(LOAD_OPTION):
+			break;
+		case(BACK_OPTION):
+			break;
+		case(EXIT_OPTION):
+			break;
+		default:
+			std::cout << "Invalid Choice!" << std::endl;
+			break;
+	}
 	//Please Enter the name of the file you want to run
 		
 	//Timesteps per second 30 steps per second
