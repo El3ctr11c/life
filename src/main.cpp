@@ -19,6 +19,8 @@ int main() {
 		//Usert choice to load a board
 		case(1):
 			//simulate_board(); //FROM life.h
+			getBoard();
+			
 			break;
 		/*
 		"Ill worry about this later"
@@ -26,7 +28,7 @@ int main() {
 			change_settings();
 			break;
 		*/
-
+		
 		default:
 			std::cout << "Invalid Choice!" << std::endl;
 			break;
