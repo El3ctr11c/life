@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include "life.h"
 
 void displayUI();
 void displayOptions();
@@ -9,29 +10,23 @@ int main() {
 	displayUI();
 	displayOptions(); 
 	
-	enum choices {LOAD_OPTION = 0, SETTINGS_OPTION = 1, BACK_OPTION = 2, EXIT_OPTION = 3};
+	int choice;
+	std::cout << "Enter the option you want to select: ";
+	std::cin >> choice;
 
 	//Ask user for the option to select
-	int choice;
-	std::cout << "Enter your choice: ";
-	std::cout << std::endl;
-	std::cin >> choice;
-	
-	//Load Board 
-	
-	//Settings (Options to change settings) stay on settings screen until exit or go back
-	
-	//Exit Progra=;
-	
-	//UI Option
 	switch (choice) {
-		//User chose 
-		case(LOAD_OPTION):
+		//Usert choice to load a board
+		case(1):
+			//simulate_board(); //FROM life.h
 			break;
-		case(BACK_OPTION):
+		/*
+		"Ill worry about this later"
+		case(2):
+			change_settings();
 			break;
-		case(EXIT_OPTION):
-			break;
+		*/
+
 		default:
 			std::cout << "Invalid Choice!" << std::endl;
 			break;
@@ -66,8 +61,5 @@ void displayOptions() {
 	std::cout << "User Options: (Type the number to select option)" << std::endl;
 	std::cout << "1). Load a Board" << std::endl;
 	std::cout << "2). Settings" << std::endl;
-	std::cout << "3). N/A" << std::endl;
-	std::cout << "4). N/A" << std::endl;
-	std::cout << "5). N/A" << std::endl;
 	std::cout << std::string(60, '=') << std::endl;
 }

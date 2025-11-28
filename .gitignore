@@ -1,0 +1,60 @@
+# ============================================================
+# Binaries / Executables
+# ============================================================
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+
+# ============================================================
+# Object files
+# ============================================================
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+
+# ============================================================
+# CMake build directories
+# ============================================================
+/build/
+/cmake-build-debug/
+/cmake-build-release/
+
+# Common CMake-generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Ninja build files
+.ninja_deps
+.ninja_log
+build.ninja
+
+# ============================================================
+# IDE / Editor files
+# ============================================================
+
+# VS Code
+.vscode/
+
+# CLion / JetBrains
+.idea/
+
+# Visual Studio
+*.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# ============================================================
+# OS / Misc
+# ============================================================
+.DS_Store
+Thumbs.db
+
