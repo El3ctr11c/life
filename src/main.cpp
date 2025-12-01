@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <string>
 #include <vector>
+#include "board.h"
 #include "life.h"
 
 void displayUI();
@@ -15,14 +16,12 @@ int main() {
 	std::cout << "Enter the option you want to select: ";
 	std::cin >> choice;
 	
-	std::vector<std::vector<char>> board;
+
 	//Ask user for the option to select
 	switch (choice) {
 		//User choice to load a board
 		case(1):
-			//simulate_board(); //FROM life.h
-			printBoard(getBoard());
-			
+			//simulate();
 			break;
 		/*
 		"Ill worry about this later"
@@ -35,15 +34,9 @@ int main() {
 			std::cout << "Invalid Choice!" << std::endl;
 			break;
 	}
-	//Please Enter the name of the file you want to run
-		
-	//Timesteps per second 30 steps per second
-		
-	//Load Board (nameboard.txt selected!)
-	//Settings txt file that stores how many seconds for simulation and timesteps per second, color
-	//Ask user if they are ready? Yes / No : 
-	//Loop each stateof game
-	
+
+
+
 	return 0;
 }
 

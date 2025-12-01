@@ -1,64 +1,19 @@
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
 
+#include "board.h"
 #include "life.h"
 
-const char LIVE_CHAR = '#';
-const char DEAD_CHAR = '.';
+//Initialize life simulation
+Life::Life() {
+	//Get Board from file
+	Board lifeBoard(getBoard());
 
-std::vector<std::vector<char>> getBoard() {
-	//Please Enter the name of the file you want to run (<name>.txt)
-	std::cout << "Enter the name of the file you want to run: ";
-	std::string filename;
-	std::cin >> filename;
-	std::cout << std::endl;
-
-	//Attempt to open board
-	std::string infilePath = "../boards/" + filename;
-	std::ifstream infile;
-	infile.open(infilePath, std::ios::in);
-	
-	if (!infile) {
-		std::cerr << "Error trying to open file! :(" << std::endl;
-		std::exit(1);
-	}
-	std::cout << "Successfully found " << filename << "! :)" << std::endl;
-
-	//Board will be stored in the stack (for now)
-	std::vector<std::vector<char>> board;
-	
-	//Read File line by line (row by row
-	std::string line;
-	while (std::getline(infile, line)) {
-		std::vector<char> row;
+	generations = 0;
 		
-		//Reserve the number of columns to row (the size of rowString)
-		row.reserve(line.size());
-
-		//Populate buffer row
-		for (char c : line) {
-			if (c == '1') row.push_back(LIVE_CHAR);
-			else row.push_back(DEAD_CHAR);
-		}
-		//Add each row to board
-		board.push_back(row);
-	}
-	return board;
+	//Count how many cells are alive / dead
+	alive_count = 0; // some method here
+	dead_count = 0;
 }
 
-//TODO MODIFY THIS FUNCTION TO SUPPORT COLOR
-void printBoard(std::vector<std::vector<char>> board) {
-	for (auto v : board) {
-		for (auto c : v) {
-			std::cout << std::setw(5) << c;
-		}
-	std::cout << std::endl;
-	}
-}
 
-void simulateBoard() {
-	std::cout << "Simulating..." << std::endl;
-}
 

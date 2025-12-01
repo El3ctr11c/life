@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(game_of_life
     src/main.cpp
+    src/board.cpp
     src/life.cpp
 )
 

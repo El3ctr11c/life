@@ -1,14 +1,24 @@
 #ifndef LIFE_H
 #define LIFE_H
 
-#include <vector>
-#include <iomanip>
+#include "board.h"
 
-//Function that asks user for board and simulates board for generations
-std::vector<std::vector<char>> getBoard();
+//Class that simulates the game of life
 
-void printBoard(std::vector<std::vector<char>> board);
+class Life {
+	public:
+		int generations;
+		int alive_count;
+		int dead_count;
 
-void simulateBoard();
+		Board lifeBoard;
+		//Constructor 
+		Life();
 
+		//Rules 
+		Board getNextState(Board curr);
+
+	private:
+		//Helper functions
+};
 #endif
